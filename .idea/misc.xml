@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/code/android/ReKall/app/src/main/res/drawable/edit_bg.xml" value="0.1" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/activity_main.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/activity_start.xml" value="0.2179930795847751" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/activity_to_settle.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/activity_to_stake.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/dialog_input_pwd.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/fragment_home.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/fragment_list.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/fragment_not_stake.xml" value="0.11330935251798561" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/fragment_staking_stake.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/fragment_wallet.xml" value="0.1090767432800935" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/item_main_tab.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/item_nft_layout.xml" value="0.33" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/item_not_stake_nft_layout.xml" value="0.1875" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/item_to_settlement_layout.xml" value="0.2342007434944238" />
+        <entry key="..\:/code/android/ReKall/app/src/main/res/layout/item_to_stake_layout.xml" value="0.1875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

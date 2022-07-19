@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">ReKallOneKey</string>
+
+
+    <string name="tab_home">Home</string>
+    <string name="tab_wallet">Wallet</string>
+    <string name="private_key">Private key</string>
+    <string name="wallet_name">WalletName</string>
+    <string name="address">Address</string>
+    <string name="not_stake">Not Stake</string>
+    <string name="staking">Staking</string>
+    <string name="balance">Balance</string>
+    <string name="estimate_gas_fee_not_enough">Estimate Gas Fee is %s,please deposit</string>
+    <string name="password">Password</string>
+    <string name="prc_url">PRC URL</string>
+    <string name="reset">reset</string>
+    <string name="reset_tips">If the connection times out, set a faster PRC URL</string>
+    <string name="logout">Log out</string>
+    <string name="confirm">Confirm</string>
+    <string name="stake">Stake</string>
+    <string name="settle">claim</string>
+    <string name="cancel">Cancel</string>
+    <string name="success">success</string>
+    <string name="please_enter_the_pwd">Please Enter Password</string>
+    <string name="please_enter_the_prc_url">Please Enter PRC URL</string>
+    <string name="please_enter_correct_pwd">Please Enter Correct Password</string>
+    <string name="loading">Loading…</string>
+    <string name="select_all">select all</string>
+    <string name="empty_not_stake_nft">Have Not UNStake NFT</string>
+    <string name="empty_staking_nft">Empty Staking NFT</string>
+    <string name="please_select_nft">please select nft</string>
+    <string name="import_priavet_key_action"> please check the format of the private key</string>
+    <string name="to_stake_tips">Don\'t close the current page before completing to stake</string>
+    <string name="to_settlement_tips">Don\'t close the current page before completing to claim</string>
+    <string name="in_line">In Line</string>
+    <string name="unknown">unknown</string>
+    <string name="approve">approve</string>
+    <string name="to_stake">To Stake</string>
+    <string name="to_settle">To Settle</string>
+    <string name="finish">Finish</string>
+    <string name="fail">Fail</string>
+    <string name="refresh">refresh</string>
+    <string name="name">name</string>
+    <string name="power">Power</string>
+    <string name="claim">claim</string>
+    <string name="description">description</string>
+    <string name="collection">collection</string>
+    <string name="profit">profit</string>
+    <string name="please_wait_init_data">wait for init data…</string>
+    <string name="please_enter_private_key">please enter private key</string>
+
+
+    <string name="please_enter_pwd">please enter password</string>
+    <string name="peleas_select_one">please select at least one item</string>
+
+
+
+    <string name="refresh_error">refresh error,please check the network</string>
+    <string name="str_http_network_error">network error</string>
+    <string name="str_http_unknown_error">unknown error</string>
+</resources>

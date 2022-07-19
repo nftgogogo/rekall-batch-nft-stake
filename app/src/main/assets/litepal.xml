@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="wallet" />
+    <version value="15" />
+    <list>
+        <mapping class="net.rekall.database.AccountWalletEntity" />
+        <mapping class="net.rekall.database.nft.UserNFTItem" />
+        <mapping class="net.rekall.database.nft.NFTIndex" />
+    </list>
+
+</litepal>

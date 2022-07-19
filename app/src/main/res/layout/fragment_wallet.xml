@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="true"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/fl_in_log"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:visibility="visible"
+              >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/address"
+                    android:textColor="@color/mainColor"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/address"
+                    android:textColor="@color/color_1b1b1b"
+                    android:textSize="20sp" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/balance"
+                        android:textColor="@color/mainColor"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/refresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:paddingHorizontal="20dp"
+                        android:text="@string/refresh"
+                        android:textColor="@color/mainColor"
+                        android:textSize="20sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:id="@+id/tv_bnb_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/balance"
+                    android:textColor="@color/color_1b1b1b"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_eka_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/balance"
+                    android:textColor="@color/color_1b1b1b"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/prc_url"
+                        android:textColor="@color/mainColor"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/reset_prc_url"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="20dp"
+                        android:text="@string/reset"
+                        android:textColor="@color/mainColor"
+                        android:textSize="20sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_reset_prc_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_prc_url_reset"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_bg"
+                        android:padding="15dp"
+                        android:visibility="visible" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reset_prc_url_btn"
+                        android:layout_width="105dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="10dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/reset"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:cornerRadius="27dp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/reset_tips"
+                    android:textColor="@color/color_aaaaaa"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_prc_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/color_1b1b1b"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/logout_btn"
+                    android:layout_width="165dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="@color/mainColor"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/logout"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    app:cornerRadius="27dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/fl_log_out"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/private_key"
+                    android:textColor="@color/mainColor"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_private_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edit_bg"
+                    android:minHeight="50dp"
+                    android:paddingHorizontal="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="@color/mainColor"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edit_bg"
+                    android:inputType="textPassword"
+                    android:minHeight="50dp"
+                    android:paddingHorizontal="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prc_url"
+                    android:textColor="@color/mainColor"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_prc_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/edit_bg"
+                    android:minHeight="50dp"
+                    android:paddingHorizontal="14dp" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/comfirm_btn"
+                    android:layout_width="165dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="@color/mainColor"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/confirm"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    app:cornerRadius="27dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </FrameLayout>
+    </ScrollView>
+</layout>
