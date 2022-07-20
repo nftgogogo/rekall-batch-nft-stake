@@ -1,17 +1,14 @@
-package net.rekall.ui.to_stake.adapter
+package onekey.rekallutils.ui.to_stake.adapter
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import net.rekall.R
-import net.rekall.bean.ToSettleBean
-import net.rekall.bean.ToStakeBean
-import net.rekall.bean.ToStakeStatus
-import net.rekall.databinding.ItemToSettlementLayoutBinding
-import net.rekall.databinding.ItemToStakeLayoutBinding
-import net.rekall.utils.ResHelper
-import net.rekall.utils.imagehelper.ImageHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.bean.ToStakeBean
+import onekey.rekallutils.bean.ToStakeStatus
+import onekey.rekallutils.databinding.ItemToStakeLayoutBinding
+import onekey.rekallutils.utils.ResHelper
+import onekey.rekallutils.utils.imagehelper.ImageHelper
 import java.math.BigDecimal
-import java.math.RoundingMode
 
 
 class ToStakeListAdapter:

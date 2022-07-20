@@ -1,4 +1,4 @@
-package net.rekall.utils.wallet
+package onekey.rekallutils.utils.wallet
 
 import android.util.Base64
 import java.nio.charset.Charset

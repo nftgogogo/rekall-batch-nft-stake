@@ -1,4 +1,4 @@
-package net.rekall.utils
+package onekey.rekallutils.utils
 
 import android.content.Context
 import android.util.TypedValue

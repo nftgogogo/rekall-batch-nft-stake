@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="net.rekall">
+    package="onekey.rekallutils">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".App"
+        android:name="onekey.rekallutils.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,7 +21,7 @@
         tools:targetApi="m">
 
         <activity
-            android:name=".ui.start.StartActivity"
+            android:name="onekey.rekallutils.ui.start.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,12 +30,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity">
+            android:name="onekey.rekallutils.ui.MainActivity">
         </activity>
 
-        <activity android:name=".ui.to_stake.ToStakeActivity" />
+        <activity android:name="onekey.rekallutils.ui.to_stake.ToStakeActivity" />
 
-        <activity android:name=".ui.to_settle.ToSettleActivity" />
+        <activity android:name="onekey.rekallutils.ui.to_settle.ToSettleActivity" />
 
         <meta-data
             android:name="android.max_aspect"

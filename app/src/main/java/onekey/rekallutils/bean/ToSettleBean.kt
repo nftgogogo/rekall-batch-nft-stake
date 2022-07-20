@@ -1,4 +1,4 @@
-package net.rekall.bean
+package onekey.rekallutils.bean
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

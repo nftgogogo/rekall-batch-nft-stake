@@ -1,21 +1,19 @@
-package net.rekall.ui.wallet
+package onekey.rekallutils.ui.wallet
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import net.rekall.R
-import net.rekall.constant.DEFAULT_PRC_URL
-import net.rekall.constant.PRC_URL_KEY
-import net.rekall.databinding.FragmentHomeBinding
-import net.rekall.databinding.FragmentWalletBinding
-import net.rekall.ui.start.StartActivity
-import net.rekall.utils.MMKVUtils
-import net.rekall.utils.ToastHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.constant.DEFAULT_PRC_URL
+import onekey.rekallutils.constant.PRC_URL_KEY
+import onekey.rekallutils.databinding.FragmentWalletBinding
+import onekey.rekallutils.ui.start.StartActivity
+import onekey.rekallutils.utils.MMKVUtils
+import onekey.rekallutils.utils.ToastHelper
 
 class WalletFragment: Fragment() {
 

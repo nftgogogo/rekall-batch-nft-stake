@@ -1,4 +1,4 @@
-package net.rekall.ui.home.staking
+package onekey.rekallutils.ui.home.staking
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -6,17 +6,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import net.rekall.R
-import net.rekall.base.BaseViewModel
-import net.rekall.database.WalletDBUtils
-import net.rekall.database.nft.NFTItemDBUtils
-import net.rekall.database.nft.StakingState
-import net.rekall.database.nft.UserNFTItem
-import net.rekall.repository.RKRepository
-import net.rekall.ui.home.HomeModel
-import net.rekall.utils.ResHelper
-import net.rekall.utils.ToastHelper
-import org.litepal.LitePal
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseViewModel
+import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.database.nft.NFTItemDBUtils
+import onekey.rekallutils.database.nft.StakingState
+import onekey.rekallutils.database.nft.UserNFTItem
+import onekey.rekallutils.repository.RKRepository
+import onekey.rekallutils.ui.home.HomeModel
+import onekey.rekallutils.utils.ResHelper
+import onekey.rekallutils.utils.ToastHelper
 import java.math.BigDecimal
 import java.math.BigInteger
 

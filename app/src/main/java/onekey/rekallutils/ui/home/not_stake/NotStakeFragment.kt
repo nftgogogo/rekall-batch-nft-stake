@@ -1,4 +1,4 @@
-package net.rekall.ui.home.not_stake
+package onekey.rekallutils.ui.home.not_stake
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,23 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.easypocket.lib.utils.livedataBus2.LiveDataBus2
-import net.rekall.R
-import net.rekall.bean.ToSettleBean
-import net.rekall.bean.ToSettleStatus
-import net.rekall.bean.ToStakeBean
-import net.rekall.bean.ToStakeStatus
-import net.rekall.databinding.FragmentHomeBinding
-import net.rekall.databinding.FragmentListBinding
-import net.rekall.databinding.FragmentNotStakeBinding
-import net.rekall.dialog.InputPwdDialog
-import net.rekall.ui.home.adapter.NFTListAdapter
-import net.rekall.ui.home.adapter.NotStakeListAdapter
-import net.rekall.ui.to_settle.ToSettleActivity
-import net.rekall.ui.to_stake.ToStakeActivity
-import net.rekall.utils.ToastHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.bean.ToStakeBean
+import onekey.rekallutils.bean.ToStakeStatus
+import onekey.rekallutils.databinding.FragmentNotStakeBinding
+import onekey.rekallutils.dialog.InputPwdDialog
+import onekey.rekallutils.ui.home.adapter.NotStakeListAdapter
+import onekey.rekallutils.ui.to_stake.ToStakeActivity
+import onekey.rekallutils.utils.ToastHelper
 
 class NotStakeFragment : Fragment() {
 

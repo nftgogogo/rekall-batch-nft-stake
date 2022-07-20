@@ -1,4 +1,4 @@
-package net.rekall.utils.wallet
+package onekey.rekallutils.utils.wallet
 
 import java.math.BigInteger
 import java.security.MessageDigest

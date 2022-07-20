@@ -1,4 +1,4 @@
-package net.rekall.base
+package onekey.rekallutils.base
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity

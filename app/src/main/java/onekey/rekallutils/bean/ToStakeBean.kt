@@ -1,4 +1,4 @@
-package net.rekall.bean
+package onekey.rekallutils.bean
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -9,5 +9,5 @@ enum class ToStakeStatus{
 @Parcelize
 data class ToStakeBean(
     val owner:String, val nftaddress:String, val tokenid:String, var tostakestatus: ToStakeStatus, var txid:String = "",
-    val contenttype:String, val name:String, val description:String, var collection:String, val image:String,val power:Double
+    val contenttype:String, val name:String, val description:String, var collection:String, val image:String, val power:Double
 ):Parcelable

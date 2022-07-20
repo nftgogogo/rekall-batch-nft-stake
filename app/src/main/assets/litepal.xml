@@ -3,9 +3,9 @@
     <dbname value="wallet" />
     <version value="15" />
     <list>
-        <mapping class="net.rekall.database.AccountWalletEntity" />
-        <mapping class="net.rekall.database.nft.UserNFTItem" />
-        <mapping class="net.rekall.database.nft.NFTIndex" />
+        <mapping class="onekey.rekallutils.database.AccountWalletEntity" />
+        <mapping class="onekey.rekallutils.database.nft.UserNFTItem" />
+        <mapping class="onekey.rekallutils.database.nft.NFTIndex" />
     </list>
 
 </litepal>

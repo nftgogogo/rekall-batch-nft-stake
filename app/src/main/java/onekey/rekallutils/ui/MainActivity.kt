@@ -1,8 +1,7 @@
-package net.rekall.ui
+package onekey.rekallutils.ui
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,21 +16,20 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNav
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.CommonPagerTitleView
-import net.rekall.R
-import net.rekall.base.BaseActivity
-import net.rekall.constant.PRC_URL_KEY
-import net.rekall.database.WalletDBUtils
-import net.rekall.database.nft.NFTItemDBUtils
-import net.rekall.databinding.ActivityMainBinding
-import net.rekall.repository.RKRepository
-import net.rekall.ui.home.HomeFragment
-import net.rekall.ui.start.StartActivity
-import net.rekall.ui.viewpager2.BaseViewPager2Adapter
-import net.rekall.ui.viewpager2.MagicViewPager2Helper
-import net.rekall.ui.wallet.WalletFragment
-import net.rekall.ui.widget.MainNavigator
-import net.rekall.utils.MMKVUtils
-import net.rekall.utils.wallet.ETHWalletUtils
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseActivity
+import onekey.rekallutils.constant.PRC_URL_KEY
+import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.database.nft.NFTItemDBUtils
+import onekey.rekallutils.databinding.ActivityMainBinding
+import onekey.rekallutils.ui.home.HomeFragment
+import onekey.rekallutils.ui.start.StartActivity
+import onekey.rekallutils.ui.viewpager2.BaseViewPager2Adapter
+import onekey.rekallutils.ui.viewpager2.MagicViewPager2Helper
+import onekey.rekallutils.ui.wallet.WalletFragment
+import onekey.rekallutils.ui.widget.MainNavigator
+import onekey.rekallutils.utils.MMKVUtils
+import onekey.rekallutils.utils.wallet.ETHWalletUtils
 import java.util.*
 
 class MainActivity : BaseActivity() {

@@ -1,14 +1,13 @@
-package net.rekall.ui.to_settle.adapter
+package onekey.rekallutils.ui.to_settle.adapter
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import net.rekall.R
-import net.rekall.bean.ToSettleBean
-import net.rekall.bean.ToSettleStatus
-import net.rekall.bean.ToStakeStatus
-import net.rekall.databinding.ItemToSettlementLayoutBinding
-import net.rekall.utils.ResHelper
-import net.rekall.utils.imagehelper.ImageHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.bean.ToSettleBean
+import onekey.rekallutils.bean.ToSettleStatus
+import onekey.rekallutils.databinding.ItemToSettlementLayoutBinding
+import onekey.rekallutils.utils.ResHelper
+import onekey.rekallutils.utils.imagehelper.ImageHelper
 import java.math.BigDecimal
 import java.math.RoundingMode
 

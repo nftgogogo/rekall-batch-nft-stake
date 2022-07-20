@@ -1,21 +1,19 @@
-package net.rekall.ui.to_settle
+package onekey.rekallutils.ui.to_settle
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.easypocket.lib.utils.livedataBus2.LiveDataBus2
 import kotlinx.coroutines.*
-import net.rekall.R
-import net.rekall.base.BaseViewModel
-import net.rekall.bean.ToSettleBean
-import net.rekall.bean.ToSettleStatus
-import net.rekall.bean.ToStakeBean
-import net.rekall.database.nft.NFTIndex
-import net.rekall.ui.home.HomeModel
-import net.rekall.ui.home.TranstactionStatus
-import net.rekall.ui.home.staking.StakingFragment
-import net.rekall.utils.ToastHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseViewModel
+import onekey.rekallutils.bean.ToSettleBean
+import onekey.rekallutils.bean.ToSettleStatus
+import onekey.rekallutils.database.nft.NFTIndex
+import onekey.rekallutils.ui.home.HomeModel
+import onekey.rekallutils.ui.home.TranstactionStatus
+import onekey.rekallutils.ui.home.staking.StakingFragment
+import onekey.rekallutils.utils.ToastHelper
 
 class ToSettleModel : BaseViewModel() {
     val lists = MutableLiveData<MutableList<ToSettleBean>>()

@@ -1,4 +1,4 @@
-package net.rekall.utils.imagehelper.engine
+package onekey.rekallutils.utils.imagehelper.engine
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,8 +7,8 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.widget.ImageView
 import android.widget.TextView
-import net.rekall.utils.imagehelper.EngineHelper
-import net.rekall.utils.imagehelper.drawable.URLDrawable
+import onekey.rekallutils.utils.imagehelper.EngineHelper
+import onekey.rekallutils.utils.imagehelper.drawable.URLDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.resource.bitmap.CenterCrop

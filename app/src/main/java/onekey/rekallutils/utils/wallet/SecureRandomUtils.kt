@@ -1,4 +1,4 @@
-package net.rekall.utils.wallet
+package onekey.rekallutils.utils.wallet
 
 import org.web3j.crypto.LinuxSecureRandom
 import java.security.SecureRandom

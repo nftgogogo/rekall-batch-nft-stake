@@ -1,15 +1,11 @@
-package net.rekall.ui.home.adapter
+package onekey.rekallutils.ui.home.adapter
 
-import android.text.TextUtils
-import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import net.rekall.R
-import net.rekall.database.nft.UserNFTItem
-import net.rekall.databinding.ItemNftLayoutBinding
-import net.rekall.databinding.ItemNotStakeNftLayoutBinding
-import net.rekall.utils.ResHelper
-import net.rekall.utils.imagehelper.ImageHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.database.nft.UserNFTItem
+import onekey.rekallutils.databinding.ItemNotStakeNftLayoutBinding
+import onekey.rekallutils.utils.imagehelper.ImageHelper
 import java.math.BigDecimal
 import java.util.LinkedHashSet
 

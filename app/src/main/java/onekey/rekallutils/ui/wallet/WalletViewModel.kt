@@ -1,19 +1,17 @@
-package net.rekall.ui.wallet
+package onekey.rekallutils.ui.wallet
 
-import android.util.Log
-import net.rekall.R
-import net.rekall.utils.ToastHelper
-import net.rekall.utils.wallet.ETHWalletUtils
+import onekey.rekallutils.R
+import onekey.rekallutils.utils.ToastHelper
+import onekey.rekallutils.utils.wallet.ETHWalletUtils
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
-import net.rekall.base.BaseViewModel
-import net.rekall.constant.PRC_URL_KEY
-import net.rekall.database.AccountState
-import net.rekall.database.WalletDBUtils
-import net.rekall.database.nft.NFTItemDBUtils
-import net.rekall.repository.RKRepository
-import net.rekall.utils.MMKVUtils
-import java.math.BigInteger
+import onekey.rekallutils.base.BaseViewModel
+import onekey.rekallutils.constant.PRC_URL_KEY
+import onekey.rekallutils.database.AccountState
+import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.database.nft.NFTItemDBUtils
+import onekey.rekallutils.repository.RKRepository
+import onekey.rekallutils.utils.MMKVUtils
 
 class WalletViewModel() : BaseViewModel() {
 

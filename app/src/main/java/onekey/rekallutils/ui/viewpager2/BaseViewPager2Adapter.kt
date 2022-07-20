@@ -1,4 +1,4 @@
-package net.rekall.ui.viewpager2
+package onekey.rekallutils.ui.viewpager2
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

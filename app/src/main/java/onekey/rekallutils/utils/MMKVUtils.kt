@@ -1,4 +1,4 @@
-package net.rekall.utils
+package onekey.rekallutils.utils
 
 import android.os.Parcelable
 import com.tencent.mmkv.MMKV

@@ -1,7 +1,6 @@
-package net.rekall.ui.widget;
+package onekey.rekallutils.ui.widget;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
@@ -9,8 +8,8 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerInd
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView;
-import net.rekall.R;
-import net.rekall.utils.ResHelper;
+import onekey.rekallutils.R;
+import onekey.rekallutils.utils.ResHelper;
 
 import java.util.List;
 

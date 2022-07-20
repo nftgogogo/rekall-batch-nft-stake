@@ -1,4 +1,4 @@
-package net.rekall
+package onekey.rekallutils
 
 import android.app.Application
 import android.content.Context
@@ -8,11 +8,11 @@ import com.scwang.smart.refresh.header.MaterialHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.tencent.mmkv.MMKV
-import net.rekall.utils.AppFilePath
-import net.rekall.utils.ResHelper
-import net.rekall.utils.ToastHelper
-import net.rekall.utils.imagehelper.ImageHelper
-import net.rekall.utils.imagehelper.engine.GlideImageEngine
+import onekey.rekallutils.utils.AppFilePath
+import onekey.rekallutils.utils.ResHelper
+import onekey.rekallutils.utils.ToastHelper
+import onekey.rekallutils.utils.imagehelper.ImageHelper
+import onekey.rekallutils.utils.imagehelper.engine.GlideImageEngine
 import org.litepal.LitePal
 
 

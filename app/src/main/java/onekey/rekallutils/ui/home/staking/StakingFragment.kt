@@ -1,4 +1,4 @@
-package net.rekall.ui.home.staking
+package onekey.rekallutils.ui.home.staking
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.easypocket.lib.utils.livedataBus2.LiveDataBus2
-import net.rekall.R
-import net.rekall.base.BaseFragment
-import net.rekall.bean.ToSettleBean
-import net.rekall.bean.ToSettleStatus
-import net.rekall.databinding.FragmentStakingStakeBinding
-import net.rekall.dialog.InputPwdDialog
-import net.rekall.ui.home.adapter.NFTListAdapter
-import net.rekall.ui.to_settle.ToSettleActivity
-import net.rekall.utils.ToastHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseFragment
+import onekey.rekallutils.bean.ToSettleBean
+import onekey.rekallutils.bean.ToSettleStatus
+import onekey.rekallutils.databinding.FragmentStakingStakeBinding
+import onekey.rekallutils.dialog.InputPwdDialog
+import onekey.rekallutils.ui.home.adapter.NFTListAdapter
+import onekey.rekallutils.ui.to_settle.ToSettleActivity
+import onekey.rekallutils.utils.ToastHelper
 
 class StakingFragment : BaseFragment() {
 
@@ -25,7 +25,7 @@ class StakingFragment : BaseFragment() {
 
     private lateinit var mBinding: FragmentStakingStakeBinding
     private val viewModel = StakingNftViewModel()
-    private val  mAdapter =NFTListAdapter()
+    private val  mAdapter = NFTListAdapter()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

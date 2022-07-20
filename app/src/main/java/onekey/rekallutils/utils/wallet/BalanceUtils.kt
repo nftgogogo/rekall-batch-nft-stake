@@ -1,4 +1,4 @@
-package net.rekall.utils.wallet
+package onekey.rekallutils.utils.wallet
 
 import org.web3j.utils.Convert
 import java.math.BigDecimal

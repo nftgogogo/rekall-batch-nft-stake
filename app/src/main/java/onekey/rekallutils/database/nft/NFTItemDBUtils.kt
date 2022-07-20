@@ -1,4 +1,4 @@
-package net.rekall.database.nft
+package onekey.rekallutils.database.nft
 
 import org.litepal.LitePal
 import java.math.BigDecimal
@@ -26,7 +26,7 @@ class NFTItemDBUtils {
             return itemList
         }
 
-        fun saveProfit(item:UserNFTItem,profit:BigDecimal){
+        fun saveProfit(item: UserNFTItem, profit:BigDecimal){
             val items = LitePal.where(
                 "ownerAddress = ? and nftAddress = ? and tokenId = ?",
                 item.ownerAddress,
@@ -41,7 +41,7 @@ class NFTItemDBUtils {
             }
         }
 
-        fun savePrower(item:UserNFTItem,power:BigDecimal){
+        fun savePrower(item: UserNFTItem, power:BigDecimal){
             val items = LitePal.where(
                 "ownerAddress = ? and nftAddress = ? and tokenId = ?",
                 item.ownerAddress,
@@ -62,7 +62,8 @@ class NFTItemDBUtils {
         }
 
         fun getNFTListForStatus(owner:String,status: StakingState): MutableList<UserNFTItem>? {
-         return LitePal.where("ownerAddress = ? and status = ?", owner,status.state.toString()).find(UserNFTItem::class.java)
+         return LitePal.where("ownerAddress = ? and status = ?", owner,status.state.toString()).find(
+             UserNFTItem::class.java)
         }
 
         fun  updateUserNFStatus(

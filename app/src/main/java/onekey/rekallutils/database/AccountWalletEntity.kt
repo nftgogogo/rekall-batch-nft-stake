@@ -1,4 +1,4 @@
-package net.rekall.database
+package onekey.rekallutils.database
 
 import org.litepal.crud.LitePalSupport
 

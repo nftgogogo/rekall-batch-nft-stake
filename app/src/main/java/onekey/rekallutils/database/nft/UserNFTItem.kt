@@ -1,6 +1,5 @@
-package net.rekall.database.nft
+package onekey.rekallutils.database.nft
 
-import android.location.Address
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 import org.litepal.annotation.Column
@@ -23,8 +22,8 @@ class UserNFTItem() : Parcelable, LitePalSupport() {
         this.status = state.state
     }
 
-    constructor(ownerAddress: String,nftAddress:String,tokenId:String,state: StakingState,
-                contentType:String,name:String,description:String,collection:String,image:String) : this() {
+    constructor(ownerAddress: String, nftAddress:String, tokenId:String, state: StakingState,
+                contentType:String, name:String, description:String, collection:String, image:String) : this() {
         this.ownerAddress = ownerAddress
         this.nftAddress = nftAddress
         this.tokenId = tokenId

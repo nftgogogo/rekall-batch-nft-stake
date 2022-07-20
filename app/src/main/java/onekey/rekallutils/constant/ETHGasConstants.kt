@@ -1,4 +1,4 @@
-package net.rekall.constant
+package onekey.rekallutils.constant
 
 object ETHGasConstants {
     const val DEFAULT_GAS_PRICE = "21000000000"

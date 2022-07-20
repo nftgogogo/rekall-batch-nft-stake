@@ -1,23 +1,22 @@
-package net.rekall.ui.to_stake
+package onekey.rekallutils.ui.to_stake
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import net.rekall.R
-import net.rekall.base.BaseActivity
-import net.rekall.bean.ToStakeBean
-import net.rekall.bean.ToStakeStatus
-import net.rekall.databinding.ActivityToSettleBinding
-import net.rekall.databinding.ActivityToStakeBinding
-import net.rekall.ui.to_stake.adapter.ToStakeListAdapter
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseActivity
+import onekey.rekallutils.bean.ToStakeBean
+import onekey.rekallutils.bean.ToStakeStatus
+import onekey.rekallutils.databinding.ActivityToStakeBinding
+import onekey.rekallutils.ui.to_stake.adapter.ToStakeListAdapter
 
 class ToStakeActivity : BaseActivity() {
 
 
     companion object{
-        fun start(context:Context,datas :ArrayList<ToStakeBean>,pwd:String){
+        fun start(context:Context, datas :ArrayList<ToStakeBean>, pwd:String){
             val intent = Intent(context, ToStakeActivity::class.java)
             intent.putParcelableArrayListExtra("data",datas)
             intent.putExtra("pwd",pwd)

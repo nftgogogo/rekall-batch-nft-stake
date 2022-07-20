@@ -1,4 +1,4 @@
-package net.rekall.ui.viewpager2
+package onekey.rekallutils.ui.viewpager2
 
 import androidx.core.view.doOnAttach
 import androidx.core.view.doOnDetach

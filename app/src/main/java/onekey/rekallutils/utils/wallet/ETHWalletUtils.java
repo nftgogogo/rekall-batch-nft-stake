@@ -1,4 +1,4 @@
-package net.rekall.utils.wallet;
+package onekey.rekallutils.utils.wallet;
 
 
 import android.text.TextUtils;
@@ -10,9 +10,9 @@ import androidx.annotation.Nullable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-import net.rekall.database.AccountWalletEntity;
-import net.rekall.database.WalletDBUtils;
-import net.rekall.utils.AppFilePath;
+import onekey.rekallutils.database.AccountWalletEntity;
+import onekey.rekallutils.database.WalletDBUtils;
+import onekey.rekallutils.utils.AppFilePath;
 
 import org.bitcoinj.crypto.ChildNumber;
 import org.bitcoinj.crypto.DeterministicKey;

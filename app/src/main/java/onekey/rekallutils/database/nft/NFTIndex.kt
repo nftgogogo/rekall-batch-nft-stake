@@ -1,4 +1,4 @@
-package net.rekall.database.nft
+package onekey.rekallutils.database.nft
 
 import org.litepal.LitePal
 import org.litepal.crud.LitePalSupport

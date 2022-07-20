@@ -1,17 +1,17 @@
-package net.rekall.database
+package onekey.rekallutils.database
 
 import org.litepal.LitePal
 import java.math.BigDecimal
 
 class WalletDBUtils {
     companion object{
-        var accountWalletEntity:AccountWalletEntity?=null
+        var accountWalletEntity: AccountWalletEntity?=null
 
         fun walletNameChecking(walletName:String):Boolean{
             return LitePal.where("name = ?",walletName).findFirst(AccountWalletEntity::class.java) != null
         }
 
-        fun queryAccountWallet(address:String):AccountWalletEntity{
+        fun queryAccountWallet(address:String): AccountWalletEntity {
             return LitePal.where("address = ?",address).findFirst(AccountWalletEntity::class.java)
         }
 
@@ -33,7 +33,8 @@ class WalletDBUtils {
             if(accountWalletEntity != null){
                 return accountWalletEntity
             }else{
-                return  LitePal.where("accountState =  ?","${AccountState.LOGIN.state}").findFirst(AccountWalletEntity::class.java)
+                return  LitePal.where("accountState =  ?","${AccountState.LOGIN.state}").findFirst(
+                    AccountWalletEntity::class.java)
             }
         }
 

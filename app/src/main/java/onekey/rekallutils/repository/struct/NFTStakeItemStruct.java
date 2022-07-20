@@ -1,4 +1,4 @@
-package net.rekall.repository.struct;
+package onekey.rekallutils.repository.struct;
 
 import org.web3j.abi.datatypes.Address;
 import org.web3j.abi.datatypes.StaticStruct;

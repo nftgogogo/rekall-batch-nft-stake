@@ -1,16 +1,16 @@
-package net.rekall.ui.to_settle
+package onekey.rekallutils.ui.to_settle
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import net.rekall.R
-import net.rekall.base.BaseActivity
-import net.rekall.bean.ToSettleBean
-import net.rekall.bean.ToSettleStatus
-import net.rekall.databinding.ActivityToSettleBinding
-import net.rekall.ui.to_settle.adapter.ToSettleListAdapter
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseActivity
+import onekey.rekallutils.bean.ToSettleBean
+import onekey.rekallutils.bean.ToSettleStatus
+import onekey.rekallutils.databinding.ActivityToSettleBinding
+import onekey.rekallutils.ui.to_settle.adapter.ToSettleListAdapter
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -18,7 +18,7 @@ class ToSettleActivity : BaseActivity() {
 
 
     companion object{
-        fun start(context:Context,datas :ArrayList<ToSettleBean>,pwd:String){
+        fun start(context:Context, datas :ArrayList<ToSettleBean>, pwd:String){
             val intent = Intent(context, ToSettleActivity::class.java)
             intent.putParcelableArrayListExtra("data",datas)
             intent.putExtra("pwd",pwd)

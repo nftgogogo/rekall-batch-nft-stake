@@ -1,4 +1,4 @@
-package net.rekall.ui.home
+package onekey.rekallutils.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
-import net.rekall.R
-import net.rekall.databinding.FragmentHomeBinding
-import net.rekall.ui.home.not_stake.NotStakeFragment
-import net.rekall.ui.home.staking.StakingFragment
-import net.rekall.ui.viewpager2.BaseViewPager2Adapter
-import net.rekall.ui.viewpager2.MagicViewPager2Helper
-import net.rekall.ui.wallet.WalletFragment
-import net.rekall.ui.widget.IndicatorAdapt
-import net.rekall.utils.ResHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.databinding.FragmentHomeBinding
+import onekey.rekallutils.ui.home.not_stake.NotStakeFragment
+import onekey.rekallutils.ui.home.staking.StakingFragment
+import onekey.rekallutils.ui.viewpager2.BaseViewPager2Adapter
+import onekey.rekallutils.ui.viewpager2.MagicViewPager2Helper
+import onekey.rekallutils.ui.widget.IndicatorAdapt
+import onekey.rekallutils.utils.ResHelper
 import java.util.*
 
 class HomeFragment : Fragment() {

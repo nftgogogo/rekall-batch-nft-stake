@@ -1,4 +1,4 @@
-package net.rekall.utils.imagehelper.engine
+package onekey.rekallutils.utils.imagehelper.engine
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -7,7 +7,7 @@ import android.net.Uri
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
-import net.rekall.utils.imagehelper.drawable.URLDrawable
+import onekey.rekallutils.utils.imagehelper.drawable.URLDrawable
 import java.io.File
 
 

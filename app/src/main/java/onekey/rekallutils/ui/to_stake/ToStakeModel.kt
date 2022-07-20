@@ -1,19 +1,19 @@
-package net.rekall.ui.to_stake
+package onekey.rekallutils.ui.to_stake
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import app.easypocket.lib.utils.livedataBus2.LiveDataBus2
 import kotlinx.coroutines.*
-import net.rekall.R
-import net.rekall.base.BaseViewModel
-import net.rekall.bean.ToStakeBean
-import net.rekall.bean.ToStakeStatus
-import net.rekall.database.nft.NFTIndex
-import net.rekall.ui.home.HomeModel
-import net.rekall.ui.home.TranstactionStatus
-import net.rekall.ui.home.not_stake.NotStakeFragment.Companion.REFRESH_NOT_STAKE
-import net.rekall.utils.ToastHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseViewModel
+import onekey.rekallutils.bean.ToStakeBean
+import onekey.rekallutils.bean.ToStakeStatus
+import onekey.rekallutils.database.nft.NFTIndex
+import onekey.rekallutils.ui.home.HomeModel
+import onekey.rekallutils.ui.home.TranstactionStatus
+import onekey.rekallutils.ui.home.not_stake.NotStakeFragment.Companion.REFRESH_NOT_STAKE
+import onekey.rekallutils.utils.ToastHelper
 
 class ToStakeModel : BaseViewModel() {
     val lists = MutableLiveData(mutableListOf<ToStakeBean>())

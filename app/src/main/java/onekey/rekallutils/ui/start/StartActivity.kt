@@ -1,16 +1,16 @@
-package net.rekall.ui.start
+package onekey.rekallutils.ui.start
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
-import net.rekall.R
-import net.rekall.base.BaseActivity
-import net.rekall.constant.DEFAULT_PRC_URL
-import net.rekall.databinding.ActivityStartBinding
-import net.rekall.ui.MainActivity
-import net.rekall.utils.ToastHelper
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseActivity
+import onekey.rekallutils.constant.DEFAULT_PRC_URL
+import onekey.rekallutils.databinding.ActivityStartBinding
+import onekey.rekallutils.ui.MainActivity
+import onekey.rekallutils.utils.ToastHelper
 
 class StartActivity : BaseActivity() {
 

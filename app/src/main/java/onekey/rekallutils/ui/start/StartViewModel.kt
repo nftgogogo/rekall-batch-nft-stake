@@ -1,4 +1,4 @@
-package net.rekall.ui.start
+package onekey.rekallutils.ui.start
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -6,15 +6,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import net.rekall.R
-import net.rekall.base.BaseViewModel
-import net.rekall.constant.PRC_URL_KEY
-import net.rekall.database.AccountState
-import net.rekall.database.WalletDBUtils
-import net.rekall.repository.RKRepository
-import net.rekall.utils.MMKVUtils
-import net.rekall.utils.ToastHelper
-import net.rekall.utils.wallet.ETHWalletUtils
+import onekey.rekallutils.R
+import onekey.rekallutils.base.BaseViewModel
+import onekey.rekallutils.constant.PRC_URL_KEY
+import onekey.rekallutils.database.AccountState
+import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.repository.RKRepository
+import onekey.rekallutils.utils.MMKVUtils
+import onekey.rekallutils.utils.ToastHelper
+import onekey.rekallutils.utils.wallet.ETHWalletUtils
 
 class StartViewModel : BaseViewModel() {
 

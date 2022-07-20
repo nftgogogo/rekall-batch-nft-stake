@@ -1,4 +1,4 @@
-package net.rekall.dialog
+package onekey.rekallutils.dialog
 
 import android.os.Bundle
 import android.view.Gravity
@@ -8,13 +8,11 @@ import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
-import net.rekall.R
-import net.rekall.database.WalletDBUtils
-import net.rekall.databinding.DialogInputPwdBinding
-import net.rekall.databinding.FragmentHomeBinding
-import net.rekall.utils.ToastHelper
-import net.rekall.utils.dp2px
-import net.rekall.utils.wallet.Md5Utils
+import onekey.rekallutils.R
+import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.databinding.DialogInputPwdBinding
+import onekey.rekallutils.utils.ToastHelper
+import onekey.rekallutils.utils.wallet.Md5Utils
 
 class InputPwdDialog : DialogFragment() {
 

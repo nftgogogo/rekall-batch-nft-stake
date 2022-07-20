@@ -1,6 +1,5 @@
-package net.rekall.base
+package onekey.rekallutils.base
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,13 +7,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import net.rekall.base.BaseConfig.Companion.EKAContractAddress
-import net.rekall.base.BaseConfig.Companion.EKADecimal
-import net.rekall.database.AccountWalletEntity
-import net.rekall.database.WalletDBUtils
-import net.rekall.repository.RKRepository
-import org.web3j.protocol.core.DefaultBlockParameterName
-import java.math.BigInteger
+import onekey.rekallutils.base.BaseConfig.Companion.EKAContractAddress
+import onekey.rekallutils.base.BaseConfig.Companion.EKADecimal
+import onekey.rekallutils.database.AccountWalletEntity
+import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.repository.RKRepository
 
 open class BaseViewModel : ViewModel() {
 

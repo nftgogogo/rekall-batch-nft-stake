@@ -1,4 +1,4 @@
-package net.rekall.utils;
+package onekey.rekallutils.utils;
 
 
 import static com.google.gson.FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES;
