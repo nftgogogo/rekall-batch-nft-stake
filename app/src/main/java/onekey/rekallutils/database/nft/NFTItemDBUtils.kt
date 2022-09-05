@@ -41,7 +41,7 @@ class NFTItemDBUtils {
             }
         }
 
-        fun savePrower(item: UserNFTItem, power:BigDecimal){
+        fun saveDays(item: UserNFTItem, days:BigDecimal){
             val items = LitePal.where(
                 "ownerAddress = ? and nftAddress = ? and tokenId = ?",
                 item.ownerAddress,
@@ -50,7 +50,7 @@ class NFTItemDBUtils {
             ).find(UserNFTItem::class.java)
             if(items.isNotEmpty()){
                 items.forEach {
-                    it.power = power.toDouble()
+                    it.days = days.toDouble()
                     it.save()
                 }
             }
@@ -64,6 +64,21 @@ class NFTItemDBUtils {
         fun getNFTListForStatus(owner:String,status: StakingState): MutableList<UserNFTItem>? {
          return LitePal.where("ownerAddress = ? and status = ?", owner,status.state.toString()).find(
              UserNFTItem::class.java)
+        }
+
+        fun savePrower(item: UserNFTItem, power:BigDecimal){
+            val items = LitePal.where(
+                "ownerAddress = ? and nftAddress = ? and tokenId = ?",
+                item.ownerAddress,
+                item.nftAddress,
+                item.tokenId.toString()
+            ).find(UserNFTItem::class.java)
+            if(items.isNotEmpty()){
+                items.forEach {
+                    it.power = power.toDouble()
+                    it.save()
+                }
+            }
         }
 
         fun  updateUserNFStatus(

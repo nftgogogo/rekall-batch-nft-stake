@@ -1,5 +1,6 @@
 package onekey.rekallutils.ui.to_settle.adapter
 
+import android.graphics.drawable.ColorDrawable
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import onekey.rekallutils.R
@@ -23,11 +24,12 @@ class ToSettleListAdapter:
     ) {
         holder.dataBinding?.run {
 
-            tvPower.text = BigDecimal(item.power).toPlainString()
+            tvPower.text = BigDecimal(item.days).toPlainString()
             tvName.text = item.name
             tvProfit.text = BigDecimal(item.profit).setScale(5, RoundingMode.CEILING).toPlainString()
             ImageHelper.get().getEngine().displayImageUrl( ivNft,
-                item?.image)
+                item?.image, errorPlaceHolder = ColorDrawable(ResHelper.getColor(R.color.mainColor))
+            )
             tvStatus.text = ResHelper.getString(when (item.tosettlestatus.name){
                 ToSettleStatus.IN_LINE.name->R.string.in_line
                 ToSettleStatus.TO_SETTLE.name->R.string.to_settle

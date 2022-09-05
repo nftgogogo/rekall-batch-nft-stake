@@ -21,5 +21,6 @@ data class ToSettleBean(
     var collection: String,
     val image: String,
     val profit: Double,
-    var power: Double
+    var days: Double,
+    var nftpoolAddress:String,
 ):Parcelable

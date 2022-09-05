@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import onekey.rekallutils.R
 import onekey.rekallutils.base.BaseViewModel
+import onekey.rekallutils.constant.NFTPOOL_ADDRESS
 import onekey.rekallutils.database.WalletDBUtils
 import onekey.rekallutils.database.nft.NFTItemDBUtils
 import onekey.rekallutils.database.nft.StakingState
@@ -45,12 +46,7 @@ class StakingNftViewModel : BaseViewModel() {
                     val list = mutableListOf<UserNFTItem>()
                     if (await.isNotEmpty()) {
                         val temp = await.mapNotNull {
-                            UserNFTItem(
-                                entity.value!!.address,
-                                it.nftAddress,
-                                it.tokenId,
-                                StakingState.STAKING
-                            )
+                           it
                         }
                         list.addAll(NFTItemDBUtils.saveUserNFTAll(temp))
                     }else{
@@ -60,7 +56,7 @@ class StakingNftViewModel : BaseViewModel() {
                     }
                     tokenURI(list)
                     refreshProfit(list)
-                    getNftPower(list)
+                    getNftDays(list)
                     lists.postValue(list)
                 }catch (e:java.lang.Exception){
                     e.printStackTrace()
@@ -123,7 +119,7 @@ class StakingNftViewModel : BaseViewModel() {
                 list.forEachIndexed {
                         index,item->
                         try {
-                            val profit = model.getNftProfit(item.ownerAddress,item.nftAddress, item.tokenId)
+                            val profit = model.getNftProfit(item.ownerAddress,item.nftAddress, item.tokenId,item.nftPoolAddress?: NFTPOOL_ADDRESS)
                             NFTItemDBUtils.saveProfit(item,profit)
                             item.profit = profit.toDouble()
                             lists.value?.set(index,item)
@@ -142,15 +138,16 @@ class StakingNftViewModel : BaseViewModel() {
 
     }
 
-    suspend  fun  getNftPower(list :MutableList<UserNFTItem>){
+    suspend  fun  getNftDays(list :MutableList<UserNFTItem>){
         viewModelScope.launch {
             try {
                 list.forEachIndexed {
                         index,item->
                     try {
-                        val power = model.getNftPower(item.ownerAddress,item.nftAddress, item.tokenId)
-                        NFTItemDBUtils.savePrower(item,power)
-                        item.power = power.toDouble()
+                        val days = model.getStakeInfo(item.ownerAddress,item.nftAddress, item.tokenId,BigDecimal("360"),item.nftPoolAddress?: NFTPOOL_ADDRESS)
+                       // val power = model.getNftPower(item.ownerAddress,item.nftAddress, item.tokenId,item.nftPoolAddress?: NFTPOOL_ADDRESS)
+                        NFTItemDBUtils.saveDays(item,days)
+                        item.days = days.toDouble()
                         lists.value?.set(index,item)
                     }catch (e:Exception){
                         e.printStackTrace()

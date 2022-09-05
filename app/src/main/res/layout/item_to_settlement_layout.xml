@@ -34,7 +34,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             app:layout_constraintTop_toBottomOf="@id/tv_name_title"
             app:layout_constraintLeft_toRightOf="@id/iv_nft"
-            android:text="@string/power"
+            android:text="@string/days"
             android:textSize="18sp"
             android:layout_marginTop="10dp"
             android:id="@+id/tv_power_title"
@@ -71,7 +71,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             app:layout_constraintTop_toBottomOf="@id/tv_name_title"
             app:layout_constraintLeft_toRightOf="@id/tv_power_title"
-            android:text="@string/power"
+            android:text="@string/days"
             android:textSize="18sp"
             android:layout_marginTop="10dp"
             android:id="@+id/tv_power"

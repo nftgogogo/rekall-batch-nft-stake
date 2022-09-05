@@ -1,5 +1,6 @@
 package onekey.rekallutils.ui.to_stake.adapter
 
+import android.graphics.drawable.ColorDrawable
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import onekey.rekallutils.R
@@ -25,7 +26,8 @@ class ToStakeListAdapter:
             tvPower.text = BigDecimal(item.power).toPlainString()
             tvName.text = item.name
             ImageHelper.get().getEngine().displayImageUrl( ivNft,
-                item?.image)
+                item?.image, errorPlaceHolder = ColorDrawable(ResHelper.getColor(R.color.mainColor))
+            )
            tvStatus.text = ResHelper.getString(when (item.tostakestatus.name){
                ToStakeStatus.IN_LINE.name->R.string.in_line
                ToStakeStatus.APPROVE.name->R.string.approve

@@ -10,17 +10,15 @@ import onekey.rekallutils.R
 import onekey.rekallutils.base.BaseConfig
 import onekey.rekallutils.base.BaseConfig.Companion.EKADecimal
 import onekey.rekallutils.base.BaseConfig.Companion.chainId
+import onekey.rekallutils.constant.*
 import onekey.rekallutils.database.WalletDBUtils
+import onekey.rekallutils.database.nft.StakingState
 import onekey.rekallutils.database.nft.UserNFTItem
 import onekey.rekallutils.repository.RKRepository
 import onekey.rekallutils.repository.struct.NFTStakeItemStruct
 import onekey.rekallutils.utils.Gsons
 import onekey.rekallutils.utils.ToastHelper
 import onekey.rekallutils.utils.wallet.ETHWalletUtils
-import onekey.rekallutils.constant.FACTORY_ADDRESS
-import onekey.rekallutils.constant.NFTPOOL_ADDRESS
-import onekey.rekallutils.constant.bsc_scan_staking_list_1
-import onekey.rekallutils.constant.bsc_scan_staking_list_2
 import org.litepal.LitePal
 import org.web3j.abi.FunctionEncoder
 import org.web3j.abi.FunctionReturnDecoder
@@ -39,6 +37,7 @@ import rxhttp.*
 import rxhttp.wrapper.param.RxHttp
 import java.math.BigDecimal
 import java.math.BigInteger
+import java.math.RoundingMode
 import kotlin.math.pow
 
 enum class TranstactionStatus {
@@ -63,8 +62,14 @@ class HomeModel {
     private val settlement = "settlement"
 
 
-    suspend fun getStakeListWithUser(address: String): MutableList<NFTStakeItemStruct> {
+    suspend fun getStakeListWithUser(address: String): MutableList<UserNFTItem> {
         val res1 = RxHttp.get(String.format(bsc_scan_staking_list_1, address.replace("0x", "")))
+            .toClass<String>()
+            .awaitResult()
+            .onFailure {
+                ToastHelper.showMessage(R.string.refresh_error)
+            }.getOrNull()
+        val res3 = RxHttp.get(String.format(bsc_scan_staking_list_3, address.replace("0x", "")))
             .toClass<String>()
             .awaitResult()
             .onFailure {
@@ -76,7 +81,7 @@ class HomeModel {
             .onFailure {
                 ToastHelper.showMessage(R.string.refresh_error)
             }.getOrNull()
-        val list = mutableListOf<NFTStakeItemStruct>()
+        val list = mutableListOf<UserNFTItem>()
         if(!TextUtils.isEmpty(res1)){
             val resEl = Gsons.fromJson(res1, JsonElement::class.java)
             val result = resEl.asJsonObject["result"]
@@ -89,7 +94,14 @@ class HomeModel {
                         if(topicsList.size()>=4){
                           val tokenId =   TypeDecoder.decodeNumeric(topicsList[3]!!.asString,Uint256::class.java)
                           val nftAddress =   TypeDecoder.decodeAddress(topicsList[2]!!.asString)
-                            list.add(NFTStakeItemStruct(nftAddress,tokenId))
+                            val userNFTItem = UserNFTItem(
+                                address,
+                                nftAddress.value,
+                                tokenId.value,
+                                StakingState.STAKING
+                            )
+                            userNFTItem.nftPoolAddress = NFTPOOL_ADDRESS
+                            list.add(userNFTItem)
                         }
                     }
                 }
@@ -109,7 +121,40 @@ class HomeModel {
                         if(topicsList.size()>=4){
                           val tokenId =   TypeDecoder.decodeNumeric(topicsList[3]!!.asString,Uint256::class.java)
                           val nftAddress =   TypeDecoder.decodeAddress(topicsList[2]!!.asString)
-                            list.add(NFTStakeItemStruct(nftAddress,tokenId))
+                            val userNFTItem = UserNFTItem(
+                                address,
+                                nftAddress.value,
+                                tokenId.value,
+                                StakingState.STAKING
+                            )
+                            userNFTItem.nftPoolAddress = NFTPOOL_ADDRESS
+                            list.add(userNFTItem)
+                        }
+                    }
+                }
+            }
+        }
+        if(!TextUtils.isEmpty(res3)){
+            val resEl = Gsons.fromJson(res3, JsonElement::class.java)
+            val result = resEl.asJsonObject["result"]
+            val message = resEl.asJsonObject["message"]
+            if(message.asString!="NOTOK"&&result != null){
+                val asJsonArray = result.asJsonArray
+                asJsonArray.forEach {
+                    val topics = it.asJsonObject["topics"]
+                    if(topics != null){
+                        val topicsList = topics.asJsonArray
+                        if(topicsList.size()>=4){
+                          val tokenId =   TypeDecoder.decodeNumeric(topicsList[3]!!.asString,Uint256::class.java)
+                          val nftAddress =   TypeDecoder.decodeAddress(topicsList[2]!!.asString)
+                            val userNFTItem = UserNFTItem(
+                                address,
+                                nftAddress.value,
+                                tokenId.value,
+                                StakingState.STAKING
+                            )
+                            userNFTItem.nftPoolAddress = NFTPOOL_ADDRESS_2
+                            list.add(userNFTItem)
                         }
                     }
                 }
@@ -280,16 +325,11 @@ class HomeModel {
             outputParameters
         )
         val encodedFunction = FunctionEncoder.encode(function)
-        val transaction = Transaction(
-            owner,
-            null as BigInteger?,
-            null as BigInteger?,
-            null as BigInteger?,
+        val transaction = Transaction.createEthCallTransaction(
+            /*entity.value!!.address*/ owner,
             nftAddress,
-            null as BigInteger?,
-            encodedFunction, 56L, null as BigInteger?, null as BigInteger?
+            encodedFunction
         )
-
         val response = RKRepository.get().web3j().ethCall(
             /*Transaction.createEthCallTransaction(
                 *//*entity.value!!.address*//* owner,
@@ -354,7 +394,7 @@ class HomeModel {
         return dividingTime
     }
 
-    suspend fun getNftProfit(owner: String, nftAddress: String, tokenId: String): BigDecimal {
+    suspend fun getNftProfit(owner: String, nftAddress: String, tokenId: String,nftpoolAddress: String): BigDecimal {
         return withContext(Dispatchers.IO) {
             try {
                 // val address = entity.value!!.address
@@ -374,7 +414,7 @@ class HomeModel {
                 val response = RKRepository.get().web3j().ethCall(
                     Transaction.createEthCallTransaction(
                         /*entity.value!!.address*/ owner,
-                        getNFTPoolAddress(),
+                        nftpoolAddress,
                         encodedFunction
                     ),
                     DefaultBlockParameterName.LATEST
@@ -400,8 +440,73 @@ class HomeModel {
         }
     }
 
+   suspend fun getStakeInfo(owner: String,nftAddress: String, tokenId: String, stakeDays: BigDecimal,nftpoolAddress: String): BigDecimal {
+        return  withContext(Dispatchers.IO){
+            try {
+                // val address = entity.value!!.address
+                val inputParameters: MutableList<Type<*>> = mutableListOf()
+                inputParameters.add(Address(nftAddress))
+                inputParameters.add(Uint256(BigInteger(tokenId)))
+                val outputParameters: MutableList<TypeReference<*>> = java.util.ArrayList()
+                val nftOwner: TypeReference<Address> =
+                    object : TypeReference<Address>() {}
+                val power: TypeReference<Uint256> =
+                    object : TypeReference<Uint256>() {}
+                val stakeTime: TypeReference<Uint256> =
+                    object : TypeReference<Uint256>() {}
+                val claimTime: TypeReference<Uint256> =
+                    object : TypeReference<Uint256>() {}
+                outputParameters.add(nftOwner)
+                outputParameters.add(power)
+                outputParameters.add(stakeTime)
+                outputParameters.add(claimTime)
+                val function = Function(
+                    "stakeInfo",
+                    inputParameters as List<Type<*>>,
+                    outputParameters
+                )
+                val encodedFunction = FunctionEncoder.encode(function)
+                val response = RKRepository.get().web3j().ethCall(
+                    Transaction.createEthCallTransaction(
+                        /*entity.value!!.address*/ owner,
+                        nftpoolAddress,
+                        encodedFunction
+                    ),
+                    DefaultBlockParameterName.LATEST
+                ).send()
+                val someTypes = FunctionReturnDecoder.decode(
+                    response.value, function.outputParameters
+                )
+                if (someTypes.size <= 0) {
+                    return@withContext BigDecimal("-1")
+                } else {
+                    val stakeTime: BigInteger = someTypes[2].value as BigInteger
+                    val Day = 86400
+                    var dayDiv =
+                        (BigDecimal((System.currentTimeMillis() / 1000).toString()) - BigDecimal(stakeTime.toString())).divide(
+                            BigDecimal(Day.toString()),
+                            18,
+                            RoundingMode.UP
+                        )
+                    if (dayDiv < BigDecimal.ZERO) {
+                        dayDiv = BigDecimal.ZERO
+                    } else {
+                        dayDiv = dayDiv.setScale(0, RoundingMode.UP)
+                    }
+                    var res = stakeDays - dayDiv.toBigInteger().toBigDecimal()
+                    if (res < BigDecimal.ZERO) {
+                        res = BigDecimal.ZERO
+                    }
+                    return@withContext res
+                }
+            } catch (e: Exception) {
+                return@withContext BigDecimal("-1")
+            }
+        }
+    }
 
-    suspend fun getNftPower(owner: String, nftAddress: String, tokenId: String): BigDecimal {
+
+    suspend fun getNftPower(owner: String, nftAddress: String, tokenId: String,nftpoolAddress: String): BigDecimal {
         return withContext(Dispatchers.IO) {
             try {
                 // val address = entity.value!!.address
@@ -420,8 +525,8 @@ class HomeModel {
                 val encodedFunction = FunctionEncoder.encode(function)
                 val response = RKRepository.get().web3j().ethCall(
                     Transaction.createEthCallTransaction(
-                        /*entity.value!!.address*/ owner,
-                        getNFTPoolAddress(),
+                        owner,
+                        nftpoolAddress,
                         encodedFunction
                     ),
                     DefaultBlockParameterName.LATEST
@@ -491,7 +596,7 @@ class HomeModel {
     }
 
 
-    fun isApprovedForAll(owner: String, nftAddress: String): Boolean {
+  /*  fun isApprovedForAll(owner: String, nftAddress: String): Boolean {
         val inputParameters: MutableList<Address> = mutableListOf()
         inputParameters.add(Address(owner))
         inputParameters.add(Address(getNFTPoolAddress()))
@@ -506,7 +611,7 @@ class HomeModel {
         val encodedFunction = FunctionEncoder.encode(function)
         val response = RKRepository.get().web3j().ethCall(
             Transaction.createEthCallTransaction(
-                /*entity.value!!.address*/ owner,
+                *//*entity.value!!.address*//* owner,
                 nftAddress,
                 encodedFunction
             ),
@@ -521,10 +626,10 @@ class HomeModel {
             val uri = someTypes[0].value
             return uri as Boolean
         }
-    }
+    }*/
 
 
-    fun setApprovalForAll(owner: String, pwd: String, nftAddress: String): String {
+   /* fun setApprovalForAll(owner: String, pwd: String, nftAddress: String): String {
         val inputParameters: MutableList<Type<*>> = mutableListOf()
         inputParameters.add(Address(getNFTPoolAddress()))
         inputParameters.add(Bool(true))
@@ -562,14 +667,14 @@ class HomeModel {
             toHexString
         ).sendAsync().get()
         return response.transactionHash ?: ""
-    }
+    }*/
 
-    suspend fun approve(owner: String, pwd: String, nftAddress: String, tokenId: String): String {
+    suspend fun approve(owner: String, pwd: String, nftAddress: String, tokenId: String,nftpoolAddress: String): String {
         return withContext(Dispatchers.IO) {
             // val address = entity.value!!.address
             try {
                 val inputParameters: MutableList<Type<*>> = mutableListOf()
-                inputParameters.add(Address(getNFTPoolAddress()))
+                inputParameters.add(Address(nftpoolAddress))
                 inputParameters.add(Uint256(BigInteger(tokenId)))
                 val outputParameters: MutableList<TypeReference<*>> = ArrayList()
                 val function = Function(
@@ -673,7 +778,7 @@ class HomeModel {
         pwd: String,
         owner: String,
         nftIndex: String,
-        tokenId: String
+        tokenId: String,nftpoolAddress:String
     ): String {
         return withContext(Dispatchers.IO) {
             try {
@@ -700,7 +805,7 @@ class HomeModel {
                         nonce,
                         gasPrice,
                         gasLimit,
-                        getNFTPoolAddress(),
+                        nftpoolAddress,
                         BigInteger.valueOf(0),
                         data
                     )

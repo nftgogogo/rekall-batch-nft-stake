@@ -23,7 +23,7 @@ class UserNFTItem() : Parcelable, LitePalSupport() {
     }
 
     constructor(ownerAddress: String, nftAddress:String, tokenId:String, state: StakingState,
-                contentType:String, name:String, description:String, collection:String, image:String) : this() {
+                contentType:String, name:String, description:String, collection:String, image:String,nftPoolAddress:String?=null) : this() {
         this.ownerAddress = ownerAddress
         this.nftAddress = nftAddress
         this.tokenId = tokenId
@@ -33,6 +33,7 @@ class UserNFTItem() : Parcelable, LitePalSupport() {
         this.description = description
         this.collection = collection
         this.image = image
+        this.nftPoolAddress = nftPoolAddress
     }
 
 
@@ -51,4 +52,6 @@ class UserNFTItem() : Parcelable, LitePalSupport() {
     var image = ""
     var profit = 0.0
     var power = 0.0
+    var days = 0.0
+    var nftPoolAddress:String? = null
 }

@@ -1,10 +1,12 @@
 package onekey.rekallutils.ui.home.adapter
 
+import android.graphics.drawable.ColorDrawable
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
 import onekey.rekallutils.R
 import onekey.rekallutils.database.nft.UserNFTItem
 import onekey.rekallutils.databinding.ItemNftLayoutBinding
+import onekey.rekallutils.utils.ResHelper
 import onekey.rekallutils.utils.imagehelper.ImageHelper
 import java.math.BigDecimal
 import java.math.RoundingMode
@@ -23,10 +25,10 @@ class NFTListAdapter :
     ) {
         holder.dataBinding?.run {
             tvName.text = item.name
-            tvPower.text = BigDecimal(item.power).toPlainString()
+            tvPower.text = BigDecimal(item.days).toPlainString()
             tvProfit.text = BigDecimal(item.profit).setScale(5,RoundingMode.CEILING).toPlainString()
             ImageHelper.get().getEngine().displayImageUrl( ivNft,
-                item?.image)
+                item?.image, errorPlaceHolder = ColorDrawable(ResHelper.getColor(R.color.mainColor)))
             if(item.profit.compareTo(0.0) == 0){
                 checkbox.isEnabled = false
                 checkbox.isChecked = false

@@ -110,7 +110,7 @@ class StakingFragment : BaseFragment() {
                                 item.name,
                                 item.description,
                                 item.collection,
-                                item.image,item.profit,item.power
+                                item.image,item.profit,item.days,item.nftPoolAddress?:""
                             )
                         }
                         ToSettleActivity.start(requireContext(), ArrayList(datas),it)

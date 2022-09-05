@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
     <dbname value="wallet" />
-    <version value="15" />
+    <version value="17" />
     <list>
         <mapping class="onekey.rekallutils.database.AccountWalletEntity" />
         <mapping class="onekey.rekallutils.database.nft.UserNFTItem" />

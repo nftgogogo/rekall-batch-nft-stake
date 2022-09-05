@@ -9,6 +9,7 @@ import onekey.rekallutils.R
 import onekey.rekallutils.base.BaseViewModel
 import onekey.rekallutils.bean.ToStakeBean
 import onekey.rekallutils.bean.ToStakeStatus
+import onekey.rekallutils.constant.NFTPOOL_ADDRESS
 import onekey.rekallutils.database.nft.NFTIndex
 import onekey.rekallutils.ui.home.HomeModel
 import onekey.rekallutils.ui.home.TranstactionStatus
@@ -74,7 +75,7 @@ class ToStakeModel : BaseViewModel() {
                                             val hash = /*"0x941cc0687b5a7b6e10267e17f74ed363b80b14ddd01d8ca2effdaae88d09ee84"*/ model.approve(
                                                 account.address,
                                                 pwd,
-                                                item.nftaddress,item.tokenid
+                                                item.nftaddress,item.tokenid, NFTPOOL_ADDRESS
                                             )
                                             if(hash == "already known"){
                                                 item.tostakestatus = ToStakeStatus.APPROVE

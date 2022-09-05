@@ -42,6 +42,7 @@
     <string name="refresh">refresh</string>
     <string name="name">name</string>
     <string name="power">Power</string>
+    <string name="days">days</string>
     <string name="claim">claim</string>
     <string name="description">description</string>
     <string name="collection">collection</string>

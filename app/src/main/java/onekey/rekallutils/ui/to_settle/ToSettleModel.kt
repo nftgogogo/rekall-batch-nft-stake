@@ -76,7 +76,7 @@ class ToSettleModel : BaseViewModel() {
                                                     pwd,
                                                     account.address,
                                                     index2,
-                                                    item.tokenid
+                                                    item.tokenid,item.nftpoolAddress
                                                 )
                                                 if(hash.isNotBlank()){
                                                     item.tosettlestatus = ToSettleStatus.TO_SETTLE
